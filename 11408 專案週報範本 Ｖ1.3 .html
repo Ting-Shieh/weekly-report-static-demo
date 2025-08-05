@@ -283,7 +283,7 @@
 
     <div class="container">
         <div class="section">
-            <div class="section-title">0.專案概況</div>
+            <div class="section-title">1.專案概況</div>
             <table>
                 <tr>
                     <td style="background-color: #f0f0f0; font-weight: bold;">專案名稱</td>
@@ -295,7 +295,14 @@
                 </tr>
                 <tr>
                     <td style="background-color: #f0f0f0; font-weight: bold;">專案狀態</td>
-                    <td><span class="status-yellow"></span> <input type="text" class="editable" value="進行中 (Plan)"></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="PENDING" selected>評估中（PENDING）</option>
+                            <option value="ON-GOING">執行中（ON-GOING）</option>
+                            <option value="CLOSED">結案（CLOSED）</option>
+                            <option value="RESOURCE COORDINATION">資源協調（RESOURCE COORDINATION）</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td style="background-color: #f0f0f0; font-weight: bold;">需求描述</td>
@@ -309,7 +316,7 @@
         </div>
 
         <div class="section">
-            <div class="section-title">3.風險管理</div>
+            <div class="section-title">2.風險管理</div>
             <table id="riskTable">
                 <tr>
                     <th>風險識題</th>
@@ -320,21 +327,39 @@
                 </tr>
                 <tr>
                     <td><input type="text" class="editable" value="各部門配合度不足"></td>
-                    <td><span class="status-red"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="RED" selected>緊急</option>
+                            <option value="ORANGE">有風險</option>
+                            <option value="GREEN">一般</option>
+                        </select>
+                    </td>
                     <td><input type="text" class="editable" value="建立高層支持與激勵機制"></td>
                     <td><input type="text" class="editable" value="專案管理部"></td>
                     <td><input type="text" class="editable" value="8月中旬完成"></td>
                 </tr>
                 <tr>
                     <td><input type="text" class="editable" value="系統整合複雜度高"></td>
-                    <td><span class="status-yellow"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="RED">緊急</option>
+                            <option value="ORANGE" selected>有風險</option>
+                            <option value="GREEN">一般</option>
+                        </select>
+                    </td>
                     <td><input type="text" class="editable" value="分階段導入與測試驗證"></td>
                     <td><input type="text" class="editable" value="IT部門"></td>
                     <td><input type="text" class="editable" value="9月底前驗證"></td>
                 </tr>
                 <tr>
                     <td><input type="text" class="editable" value="資料品質與一致性"></td>
-                    <td><span class="status-yellow"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="RED">緊急</option>
+                            <option value="ORANGE" selected>有風險</option>
+                            <option value="GREEN">一般</option>
+                        </select>
+                    </td>
                     <td><input type="text" class="editable" value="建立資料標準化流程"></td>
                     <td><input type="text" class="editable" value="各專案負責人"></td>
                     <td><input type="text" class="editable" value="持續進行"></td>
@@ -345,7 +370,7 @@
 
     <div class="container">
         <div class="section">
-            <div class="section-title">1.重要進度 / 進度更新</div>
+            <div class="section-title">3.重要進度 / 進度更新</div>
             <div style="margin-top: 15px;">
                 <div><span class="checkmark">✓</span> 本週完成事項</div>
                 <div style="margin-left: 20px; margin-top: 5px;">
@@ -365,7 +390,7 @@
         </div>
 
         <div class="section">
-            <div class="section-title">2.關鍵 NPI</div>
+            <div class="section-title">4.關鍵 NPI</div>
             <table id="npiTable">
                 <tr>
                     <th>NPI階段</th>
@@ -407,7 +432,7 @@
     </div>
 
     <div class="section full-width">
-        <div class="section-title">4.開發階段狀態</div>
+        <div class="section-title">5.開發階段狀態</div>
         <div class="timeline">
             <div class="phase">
                 <div class="phase-circle phase-completed"><input type="text" class="editable" value="C0" style="background:transparent; color:white; border:none; text-align:center; width:20px;"></div>
@@ -443,7 +468,7 @@
     </div>
 
     <div class="section full-width">
-        <div class="section-title">5.管理層決策需求</div>
+        <div class="section-title">6.管理層決策需求</div>
         <table id="decisionTable">
             <tr>
                 <th style="width: 30%;">決策項目</th>
