@@ -320,9 +320,9 @@
             <table id="riskTable">
                 <tr>
                     <th>風險識題</th>
-                    <th>影響程度</th>
+                    <th style="width: 70px;">影響程度</th>
                     <th>提解措施</th>
-                    <th>負責人</th>
+                    <th style="width: 80px;">負責人</th>
                     <th>目標完成時間</th>
                 </tr>
                 <tr>
@@ -330,7 +330,7 @@
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="RED" selected>緊急</option>
-                            <option value="ORANGE">有風險</option>
+                            <option value="ORANGE">風險</option>
                             <option value="GREEN">一般</option>
                         </select>
                     </td>
@@ -343,7 +343,7 @@
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="RED">緊急</option>
-                            <option value="ORANGE" selected>有風險</option>
+                            <option value="ORANGE" selected>風險</option>
                             <option value="GREEN">一般</option>
                         </select>
                     </td>
@@ -356,7 +356,7 @@
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="RED">緊急</option>
-                            <option value="ORANGE" selected>有風險</option>
+                            <option value="ORANGE" selected>風險</option>
                             <option value="GREEN">一般</option>
                         </select>
                     </td>
@@ -374,58 +374,123 @@
             <div style="margin-top: 15px;">
                 <div><span class="checkmark">✓</span> 本週完成事項</div>
                 <div style="margin-left: 20px; margin-top: 5px;">
-                    <span class="checkmark">✓</span> <input type="text" class="editable" value="完成現有專案清單盤點"><br>
-                    <span class="checkmark">✓</span> <input type="text" class="editable" value="建立專案分類與優先級定義"><br>
-                    <span class="checkmark">✓</span> <input type="text" class="editable" value="制定專案管理標準作業程序初稿">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="checkmark" style="margin-right: 8px;">✓</span>
+                        <input type="text" class="editable" value="完成現有專案清單盤點" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="checkmark" style="margin-right: 8px;">✓</span>
+                        <input type="text" class="editable" value="建立專案分類與優先級定義" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="checkmark" style="margin-right: 8px;">✓</span>
+                        <input type="text" class="editable" value="制定專案管理標準作業程序初稿" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="checkmark" style="margin-right: 8px;">✓</span>
+                        <input type="text" class="editable" value="" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
                 </div>
                 
                 <div style="margin-top: 15px;"><span class="cross">✗</span> 下週重點事項</div>
                 <div style="margin-left: 20px; margin-top: 5px;">
-                    <span class="cross">✗</span> <input type="text" class="editable" value="設計專案管理儀表板架構"><br>
-                    <span class="cross">✗</span> <input type="text" class="editable" value="建立資源需求評估模型"><br>
-                    <span class="cross">✗</span> <input type="text" class="editable" value="規劃效益衡量指標與KPI"><br>
-                    <span class="cross">✗</span> <input type="text" class="editable" value="啟動跨部門協作機制建立">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="cross" style="margin-right: 8px;">✗</span>
+                        <input type="text" class="editable" value="設計專案管理儀表板架構" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="cross" style="margin-right: 8px;">✗</span>
+                        <input type="text" class="editable" value="建立資源需求評估模型" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="cross" style="margin-right: 8px;">✗</span>
+                        <input type="text" class="editable" value="規劃效益衡量指標與KPI" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <span class="cross" style="margin-right: 8px;">✗</span>
+                        <input type="text" class="editable" value="啟動跨部門協作機制建立" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">4.關鍵 NPI</div>
+            <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+                4.關鍵 NPI
+                <button id="addNpiRow" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
+            </div>
             <table id="npiTable">
                 <tr>
-                    <th>NPI階段</th>
+                    <th style="width: 40px;"></th>
+                    <th style="width: 80px;">NPI階段</th>
                     <th>Milestone</th>
-                    <th>Owner</th>
-                    <th>SPI</th>
-                    <th>狀態</th>
+                    <th>Support</th>
+                    <th style="width: 60px;">SPI</th>
+                    <th style="width: 80px;">狀態</th>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="C0"></td>
                     <td><input type="text" class="editable" value="專案盤點與需求確認"></td>
                     <td><input type="text" class="editable" value="PM"></td>
                     <td><input type="text" class="editable" value="0.9"></td>
-                    <td><span class="status-green"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN" selected>🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED">🔴</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="C1"></td>
                     <td><input type="text" class="editable" value="管理機制設計與驗證"></td>
                     <td><input type="text" class="editable" value="PM"></td>
                     <td><input type="text" class="editable" value="0.3"></td>
-                    <td><span class="status-yellow"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN">🟢</option>
+                            <option value="YELLOW" selected>🟡</option>
+                            <option value="RED">🔴</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="C2"></td>
                     <td><input type="text" class="editable" value="系統平台建置與測試"></td>
                     <td><input type="text" class="editable" value="IT部門"></td>
                     <td><input type="text" class="editable" value="0.1"></td>
-                    <td><span class="status-red"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN">🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED" selected>🔴</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="C3"></td>
                     <td><input type="text" class="editable" value="試營運與成效驗證"></td>
                     <td><input type="text" class="editable" value="PM"></td>
                     <td><input type="text" class="editable" value="0"></td>
-                    <td><span class="status-red"></span></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN">🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED" selected>🔴</option>
+                        </select>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -808,6 +873,42 @@ ${data.decisions.map(decision => `| ${decision.item} | ${decision.urgency} | ${d
                 status.textContent = '準備就緒';
             }, 3000);
         }
+
+        // 新增 NPI 行功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const addNpiButton = document.getElementById('addNpiRow');
+            const npiTable = document.getElementById('npiTable');
+            
+            addNpiButton.addEventListener('click', function() {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td style="text-align: center;">
+                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN" selected>🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED">🔴</option>
+                        </select>
+                    </td>
+                `;
+                npiTable.appendChild(newRow);
+            });
+
+            // 刪除行功能
+            npiTable.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-row')) {
+                    if (confirm('確定要刪除這一行嗎？')) {
+                        e.target.closest('tr').remove();
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
