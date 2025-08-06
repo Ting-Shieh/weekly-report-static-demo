@@ -350,9 +350,13 @@
         </div>
 
         <div class="section">
-            <div class="section-title">2.風險管理</div>
+            <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+                2.風險管理
+                <button id="addRiskRow" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
+            </div>
             <table id="riskTable">
                 <tr>
+                    <th style="width: 40px;"></th>
                     <th>風險識題</th>
                     <th style="width: 70px;">影響程度</th>
                     <th>提解措施</th>
@@ -360,12 +364,15 @@
                     <th>目標完成時間</th>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-risk-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="各部門配合度不足"></td>
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
-                            <option value="RED" selected>緊急</option>
+                            <option value="RED">緊急</option>
                             <option value="ORANGE">風險</option>
-                            <option value="GREEN">一般</option>
+                            <option value="GREEN" selected>一般</option>
                         </select>
                     </td>
                     <td><input type="text" class="editable" value="建立高層支持與激勵機制"></td>
@@ -373,12 +380,15 @@
                     <td><input type="text" class="editable" value="8月中旬完成"></td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-risk-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="系統整合複雜度高"></td>
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="RED">緊急</option>
-                            <option value="ORANGE" selected>風險</option>
-                            <option value="GREEN">一般</option>
+                            <option value="ORANGE">風險</option>
+                            <option value="GREEN" selected>一般</option>
                         </select>
                     </td>
                     <td><input type="text" class="editable" value="分階段導入與測試驗證"></td>
@@ -386,12 +396,15 @@
                     <td><input type="text" class="editable" value="9月底前驗證"></td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        <button class="delete-risk-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
                     <td><input type="text" class="editable" value="資料品質與一致性"></td>
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="RED">緊急</option>
-                            <option value="ORANGE" selected>風險</option>
-                            <option value="GREEN">一般</option>
+                            <option value="ORANGE">風險</option>
+                            <option value="GREEN" selected>一般</option>
                         </select>
                     </td>
                     <td><input type="text" class="editable" value="建立資料標準化流程"></td>
@@ -406,56 +419,66 @@
         <div class="section">
             <div class="section-title">3.重要進度 / 進度更新</div>
             <div style="margin-top: 15px;">
-                <div><span class="checkmark">✓</span> 本週完成事項</div>
-                <div style="margin-left: 20px; margin-top: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><span class="checkmark">✓</span> 本週完成事項</span>
+                    <button id="addCompletedItem" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
+                </div>
+                <div id="completedItemsContainer" style="margin-left: 20px; margin-top: 5px;">
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="checkmark" style="margin-right: 8px;">✓</span>
                         <input type="text" class="editable" value="完成現有專案清單盤點" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-completed-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="checkmark" style="margin-right: 8px;">✓</span>
                         <input type="text" class="editable" value="建立專案分類與優先級定義" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-completed-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="checkmark" style="margin-right: 8px;">✓</span>
                         <input type="text" class="editable" value="制定專案管理標準作業程序初稿" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-completed-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="checkmark" style="margin-right: 8px;">✓</span>
                         <input type="text" class="editable" value="" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-completed-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                 </div>
                 
-                <div style="margin-top: 15px;"><span class="cross">✗</span> 下週重點事項</div>
-                <div style="margin-left: 20px; margin-top: 5px;">
+                <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><span class="cross">✗</span> 下週重點事項</span>
+                    <button id="addTodoItem" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
+                </div>
+                <div id="todoItemsContainer" style="margin-left: 20px; margin-top: 5px;">
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="cross" style="margin-right: 8px;">✗</span>
                         <input type="text" class="editable" value="設計專案管理儀表板架構" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-todo-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="cross" style="margin-right: 8px;">✗</span>
                         <input type="text" class="editable" value="建立資源需求評估模型" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-todo-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="cross" style="margin-right: 8px;">✗</span>
                         <input type="text" class="editable" value="規劃效益衡量指標與KPI" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-todo-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
                         <span class="cross" style="margin-right: 8px;">✗</span>
                         <input type="text" class="editable" value="啟動跨部門協作機制建立" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                        <button class="delete-todo-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
-                4.關鍵 NPI
-                <button id="addNpiRow" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
-            </div>
+            <div class="section-title">4.關鍵 NPI</div>
             <table id="npiTable">
                 <tr>
-                    <th style="width: 40px;"></th>
                     <th style="width: 80px;">NPI階段</th>
                     <th>Milestone</th>
                     <th>Support</th>
@@ -463,9 +486,6 @@
                     <th style="width: 80px;">狀態</th>
                 </tr>
                 <tr>
-                    <td style="text-align: center;">
-                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
-                    </td>
                     <td><input type="text" class="editable" value="C0"></td>
                     <td><input type="text" class="editable" value="專案盤點與需求確認"></td>
                     <td><input type="text" class="editable" value="PM"></td>
@@ -479,9 +499,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;">
-                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
-                    </td>
                     <td><input type="text" class="editable" value="C1"></td>
                     <td><input type="text" class="editable" value="管理機制設計與驗證"></td>
                     <td><input type="text" class="editable" value="PM"></td>
@@ -495,9 +512,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;">
-                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
-                    </td>
                     <td><input type="text" class="editable" value="C2"></td>
                     <td><input type="text" class="editable" value="系統平台建置與測試"></td>
                     <td><input type="text" class="editable" value="IT部門"></td>
@@ -511,13 +525,36 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;">
-                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
-                    </td>
                     <td><input type="text" class="editable" value="C3"></td>
                     <td><input type="text" class="editable" value="試營運與成效驗證"></td>
                     <td><input type="text" class="editable" value="PM"></td>
                     <td><input type="text" class="editable" value="0"></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN">🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED" selected>🔴</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="editable" value="C4"></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="GREEN">🟢</option>
+                            <option value="YELLOW">🟡</option>
+                            <option value="RED" selected>🔴</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="editable" value="C5"></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
                             <option value="GREEN">🟢</option>
@@ -567,29 +604,60 @@
     </div>
 
     <div class="section full-width">
-        <div class="section-title">6.管理層決策需求</div>
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+            6.管理層決策需求
+            <button id="addDecisionRow" style="background-color: #4472C4; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;">新增</button>
+        </div>
         <table id="decisionTable">
             <tr>
+                <th style="width: 40px;"></th>
                 <th style="width: 30%;">決策項目</th>
                 <th style="width: 15%;">緊急程度</th>
                 <th style="width: 20%;">預期決策時間</th>
                 <th style="width: 35%;">相關影響</th>
             </tr>
             <tr>
+                <td style="text-align: center;">
+                    <button class="delete-decision-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                </td>
                 <td><input type="text" class="editable" value="專案管理系統平台選型"></td>
-                <td><span class="status-red"></span> <input type="text" class="editable" value="緊急"></td>
+                <td>
+                    <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                        <option value="URGENT" selected>緊急</option>
+                        <option value="IMPORTANT">重要</option>
+                        <option value="NORMAL">一般</option>
+                    </select>
+                </td>
                 <td><input type="text" class="editable" value="8月15日前"></td>
                 <td><input type="text" class="editable" value="影響後續系統建置時程與預算"></td>
             </tr>
             <tr>
+                <td style="text-align: center;">
+                    <button class="delete-decision-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                </td>
                 <td><input type="text" class="editable" value="跨部門協作獎勵機制"></td>
-                <td><span class="status-yellow"></span> <input type="text" class="editable" value="重要"></td>
+                <td>
+                    <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                        <option value="URGENT">緊急</option>
+                        <option value="IMPORTANT" selected>重要</option>
+                        <option value="NORMAL">一般</option>
+                    </select>
+                </td>
                 <td><input type="text" class="editable" value="9月1日前"></td>
                 <td><input type="text" class="editable" value="決定各部門參與積極度與配合度"></td>
             </tr>
             <tr>
+                <td style="text-align: center;">
+                    <button class="delete-decision-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                </td>
                 <td><input type="text" class="editable" value="專案分級與資源配置標準"></td>
-                <td><span class="status-green"></span> <input type="text" class="editable" value="一般"></td>
+                <td>
+                    <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                        <option value="URGENT">緊急</option>
+                        <option value="IMPORTANT">重要</option>
+                        <option value="NORMAL" selected>一般</option>
+                    </select>
+                </td>
                 <td><input type="text" class="editable" value="9月20日前"></td>
                 <td><input type="text" class="editable" value="影響資源分配效率與專案優先級"></td>
             </tr>
@@ -697,12 +765,14 @@
                 
                 // 決策需求
                 decisions: Array.from(document.querySelectorAll('#decisionTable tr')).slice(1).map(row => {
-                    const cells = row.querySelectorAll('input');
+                    const inputs = row.querySelectorAll('input');
+                    const urgencySelect = row.querySelector('select');
+                    
                     return {
-                        item: cells[0] ? cells[0].value : '',
-                        urgency: cells[1] ? cells[1].value : '',
-                        deadline: cells[2] ? cells[2].value : '',
-                        impact: cells[3] ? cells[3].value : ''
+                        item: inputs[0] ? inputs[0].value : '',
+                        urgency: urgencySelect ? urgencySelect.options[urgencySelect.selectedIndex]?.text || '' : '',
+                        deadline: inputs[1] ? inputs[1].value : '',
+                        impact: inputs[2] ? inputs[2].value : ''
                     };
                 }).filter(decision => decision.item) // 過濾空的決策項目
             };
@@ -914,36 +984,121 @@ ${data.decisions.map(decision => `| ${decision.item} | ${decision.urgency} | ${d
             }, 3000);
         }
 
-        // 新增 NPI 行功能
+        // 新增風險管理行功能
         document.addEventListener('DOMContentLoaded', function() {
-            const addNpiButton = document.getElementById('addNpiRow');
-            const npiTable = document.getElementById('npiTable');
+            const addRiskButton = document.getElementById('addRiskRow');
+            const riskTable = document.getElementById('riskTable');
             
-            addNpiButton.addEventListener('click', function() {
+            addRiskButton.addEventListener('click', function() {
                 const newRow = document.createElement('tr');
                 newRow.innerHTML = `
                     <td style="text-align: center;">
-                        <button class="delete-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                        <button class="delete-risk-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
                     </td>
-                    <td><input type="text" class="editable" value=""></td>
-                    <td><input type="text" class="editable" value=""></td>
-                    <td><input type="text" class="editable" value=""></td>
                     <td><input type="text" class="editable" value=""></td>
                     <td>
                         <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
-                            <option value="GREEN" selected>🟢</option>
-                            <option value="YELLOW">🟡</option>
-                            <option value="RED">🔴</option>
+                            <option value="RED">緊急</option>
+                            <option value="ORANGE">風險</option>
+                            <option value="GREEN" selected>一般</option>
                         </select>
                     </td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
                 `;
-                npiTable.appendChild(newRow);
+                riskTable.appendChild(newRow);
             });
 
-            // 刪除行功能
-            npiTable.addEventListener('click', function(e) {
-                if (e.target.classList.contains('delete-row')) {
+            // 刪除風險管理行功能
+            riskTable.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-risk-row')) {
                     if (confirm('確定要刪除這一行嗎？')) {
+                        e.target.closest('tr').remove();
+                    }
+                }
+            });
+
+            // 新增本週完成事項功能
+            const addCompletedButton = document.getElementById('addCompletedItem');
+            const completedContainer = document.getElementById('completedItemsContainer');
+            
+            addCompletedButton.addEventListener('click', function() {
+                const newItem = document.createElement('div');
+                newItem.style.display = 'flex';
+                newItem.style.alignItems = 'center';
+                newItem.style.marginBottom = '5px';
+                newItem.innerHTML = `
+                    <span class="checkmark" style="margin-right: 8px;">✓</span>
+                    <input type="text" class="editable" value="" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    <button class="delete-completed-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
+                `;
+                completedContainer.appendChild(newItem);
+            });
+
+            // 新增下週重點事項功能
+            const addTodoButton = document.getElementById('addTodoItem');
+            const todoContainer = document.getElementById('todoItemsContainer');
+            
+            addTodoButton.addEventListener('click', function() {
+                const newItem = document.createElement('div');
+                newItem.style.display = 'flex';
+                newItem.style.alignItems = 'center';
+                newItem.style.marginBottom = '5px';
+                newItem.innerHTML = `
+                    <span class="cross" style="margin-right: 8px;">✗</span>
+                    <input type="text" class="editable" value="" style="flex: 1; border: 1px solid #ccc; border-radius: 3px; padding: 4px;">
+                    <button class="delete-todo-item" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: 8px;">-</button>
+                `;
+                todoContainer.appendChild(newItem);
+            });
+
+            // 刪除本週完成事項功能
+            completedContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-completed-item')) {
+                    if (confirm('確定要刪除這個完成事項嗎？')) {
+                        e.target.closest('div').remove();
+                    }
+                }
+            });
+
+            // 刪除下週重點事項功能
+            todoContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-todo-item')) {
+                    if (confirm('確定要刪除這個重點事項嗎？')) {
+                        e.target.closest('div').remove();
+                    }
+                }
+            });
+
+            // 新增管理層決策需求功能
+            const addDecisionButton = document.getElementById('addDecisionRow');
+            const decisionTable = document.getElementById('decisionTable');
+            
+            addDecisionButton.addEventListener('click', function() {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td style="text-align: center;">
+                        <button class="delete-decision-row" style="background-color: #ff4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">-</button>
+                    </td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td>
+                        <select class="editable" style="width: 100%; padding: 2px; border: none; background-color: transparent; font-family: inherit; font-size: inherit;">
+                            <option value="URGENT">緊急</option>
+                            <option value="IMPORTANT">重要</option>
+                            <option value="NORMAL" selected>一般</option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="editable" value=""></td>
+                    <td><input type="text" class="editable" value=""></td>
+                `;
+                decisionTable.appendChild(newRow);
+            });
+
+            // 刪除管理層決策需求功能
+            decisionTable.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-decision-row')) {
+                    if (confirm('確定要刪除這個決策需求嗎？')) {
                         e.target.closest('tr').remove();
                     }
                 }
